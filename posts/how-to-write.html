@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何给这个博客添加新文章 · 我的博客</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="nav-logo" href="../index.html">我的<span>博客</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="../index.html">← 返回首页</a>
+    <div class="article-header">
+      <span class="tag">写作</span>
+      <h1>如何给这个博客添加新文章</h1>
+      <div class="post-meta">2026-10-20 · 约 3 分钟阅读</div>
+    </div>
+
+    <article class="article-content">
+      <p>本博客是纯静态站点，发布新文章只需要三个步骤，全程无需数据库和后端。</p>
+
+      <h2>第一步：复制文章模板</h2>
+      <p>在 <code>posts/</code> 目录下复制任意一篇现有文章（例如 <code>hello-world.html</code>），重命名为你的新文章，例如 <code>my-new-post.html</code>。建议使用英文小写加连字符的文件名。</p>
+
+      <h2>第二步：修改内容</h2>
+      <p>打开新文件，修改以下几处：</p>
+      <ul>
+        <li><code>&lt;title&gt;</code> —— 文章标题（显示在浏览器标签页）</li>
+        <li><code>&lt;h1&gt;</code> —— 文章大标题</li>
+        <li><code>post-meta</code> —— 发布日期和分类标签</li>
+        <li><code>&lt;article&gt;</code> 内的正文 —— 用 <code>&lt;h2&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;pre&gt;</code>、<code>&lt;blockquote&gt;</code> 等标签组织内容，样式已全部内置</li>
+      </ul>
+
+      <h2>第三步：更新首页列表并推送</h2>
+      <p>打开 <code>index.html</code>，在文章列表最上方按相同结构添加一个 <code>&lt;li class="post-item"&gt;</code> 条目，然后提交推送：</p>
+      <pre><code>git add .
+git commit -m "post: 新文章《我的新文章》"
+git push</code></pre>
+      <p>推送后 GitHub Pages 会自动重新部署，1～2 分钟后文章即上线。</p>
+
+      <blockquote>💡 小技巧：图片统一放在 <code>images/</code> 目录，引用时使用相对路径 <code>../images/xxx.png</code>（相对于 posts 目录）。</blockquote>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 我的博客 · 由 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 免费托管</p>
+  </footer>
+</body>
+</html>
