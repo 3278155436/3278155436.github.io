@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Pages 部署完全指南 · 我的博客</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="nav-logo" href="../index.html">我的<span>博客</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <a class="back-link" href="../index.html">← 返回首页</a>
+    <div class="article-header">
+      <span class="tag">教程</span>
+      <h1>GitHub Pages 部署完全指南</h1>
+      <div class="post-meta">2026-10-24 · 约 5 分钟阅读</div>
+    </div>
+
+    <article class="article-content">
+      <p>GitHub Pages 是 GitHub 提供的免费静态网站托管服务。只要你有一个 GitHub 账号，就能把任意静态网站（HTML/CSS/JS）发布到互联网上，无需购买服务器、无需配置环境。</p>
+
+      <h2>第一步：创建仓库</h2>
+      <p>登录 GitHub 后，点击右上角 <strong>+</strong> → <strong>New repository</strong>，创建一个新仓库：</p>
+      <ul>
+        <li>仓库名设置为 <code>你的用户名.github.io</code>（这是个人/组织站点，直接绑定根域名）</li>
+        <li>可见性选择 <strong>Public</strong></li>
+        <li>勾选 <strong>Add a README file</strong> 初始化仓库</li>
+      </ul>
+      <blockquote>💡 如果仓库名不是 <code>用户名.github.io</code> 也可以，网站会发布在 <code>用户名.github.io/仓库名</code> 子路径下，这就是「项目站点」。</blockquote>
+
+      <h2>第二步：上传网站文件</h2>
+      <p>把网站文件推送到仓库。最简单的方式是在仓库页面点击 <strong>Add file → Upload files</strong>，直接把 <code>index.html</code>、<code>css/</code> 等文件拖进去。也可以使用 Git 命令行：</p>
+      <pre><code>git clone https://github.com/你的用户名/你的用户名.github.io.git
+cd 你的用户名.github.io
+
+# 把网站文件复制进来后：
+git add .
+git commit -m "feat: 发布博客首版"
+git push origin main</code></pre>
+
+      <h2>第三步：开启 Pages</h2>
+      <ol>
+        <li>进入仓库的 <strong>Settings → Pages</strong></li>
+        <li>在 <strong>Build and deployment</strong> 下，Source 选择 <strong>Deploy from a branch</strong></li>
+        <li>Branch 选择 <code>main</code>、目录选择 <code>/ (root)</code>，点击 <strong>Save</strong></li>
+      </ol>
+      <p>等待 1～2 分钟，访问 <code>https://你的用户名.github.io</code> 即可看到你的网站上线。</p>
+
+      <h2>第四步（可选）：绑定自定义域名</h2>
+      <p>如果你有自己的域名，可以在域名服务商添加一条 CNAME 记录指向 <code>你的用户名.github.io</code>，然后在仓库根目录添加一个 <code>CNAME</code> 文件（内容为你的域名），并在 Settings → Pages 中填入域名。GitHub 会自动为你的站点签发 HTTPS 证书。</p>
+
+      <h2>常见问题</h2>
+      <h3>页面显示 404？</h3>
+      <p>检查根目录是否存在 <code>index.html</code>（注意文件名全小写），以及 Pages 是否已成功部署（可在仓库的 Actions 标签页查看部署状态）。</p>
+      <h3>样式没加载？</h3>
+      <p>项目站点的资源路径要使用相对路径（如 <code>css/style.css</code>），不要以 <code>/</code> 开头，否则会指向域名根目录导致 404。</p>
+      <h3>更新后没生效？</h3>
+      <p>浏览器缓存了旧页面，强制刷新（Ctrl+F5）或等待几分钟即可。</p>
+
+      <h2>进阶方向</h2>
+      <ul>
+        <li><strong>Jekyll / Hugo / Hexo</strong>：静态站点生成器，用 Markdown 写文章，自动生成整站</li>
+        <li><strong>GitHub Actions</strong>：配置自动构建，push 后自动发布</li>
+        <li><strong>评论系统</strong>：接入 Giscus（基于 GitHub Discussions）实现免费评论</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 我的博客 · 由 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 免费托管</p>
+  </footer>
+</body>
+</html>
