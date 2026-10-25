@@ -3,58 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的博客 · 记录与思考</title>
-  <meta name="description" content="一个部署在 GitHub Pages 上的免费静态博客">
+  <title>我的小站 · 个人主页</title>
+  <meta name="description" content="我的个人主页：关于我、我的项目与随笔">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="主导航">
-      <a class="nav-logo" href="index.html">我的<span>博客</span></a>
+      <a class="nav-logo" href="index.html">我的<span>小站</span></a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">首页</a></li>
         <li><a href="about.html">关于</a></li>
-        <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/3278155436" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>你好，欢迎来到我的博客 👋</h1>
-      <p>这里记录我的学习笔记、技术思考和生活随笔。本站由 GitHub Pages 免费托管，纯静态、无需服务器。</p>
+    <!-- 个人介绍 -->
+    <section class="profile" aria-label="自我介绍">
+      <div class="avatar" aria-hidden="true">👋</div>
+      <div>
+        <h1>你好，我是 <span class="name">某某某</span></h1>
+        <p class="bio">欢迎来到我的个人小站。这里记录我的思考、作品与生活碎片——很高兴在这里遇见你。</p>
+      </div>
     </section>
 
-    <section aria-labelledby="posts-heading">
-      <h2 class="section-title" id="posts-heading">最新文章</h2>
-      <ul class="post-list">
-        <li class="post-item">
-          <div class="post-meta">
-            <span class="tag">教程</span>2026-10-24 · 约 5 分钟
-          </div>
-          <h2><a href="posts/github-pages-guide.html">GitHub Pages 部署完全指南</a></h2>
-          <p class="post-excerpt">从创建仓库到网站上线，手把手带你把静态网站部署到 GitHub Pages，全过程不超过 10 分钟，完全免费。</p>
-        </li>
-        <li class="post-item">
-          <div class="post-meta">
-            <span class="tag">写作</span>2026-10-20 · 约 3 分钟
-          </div>
-          <h2><a href="posts/how-to-write.html">如何给这个博客添加新文章</a></h2>
-          <p class="post-excerpt">不需要数据库，不需要后端：复制一个模板文件、写好内容、提交推送，三步完成发布。</p>
-        </li>
-        <li class="post-item">
-          <div class="post-meta">
-            <span class="tag">随笔</span>2026-10-15 · 约 2 分钟
-          </div>
-          <h2><a href="posts/hello-world.html">你好，世界：为什么我要写博客</a></h2>
-          <p class="post-excerpt">写作是最好的思考方式。这是本博客的第一篇文章，聊聊我开启这段旅程的原因。</p>
-        </li>
-      </ul>
-    </section>
+    <div class="tag-row" aria-label="身份标签">
+      <span class="tag">🌱 终身学习者</span>
+      <span class="tag">🛠 爱折腾</span>
+      <span class="tag">✍️ 记录生活</span>
+      <span class="tag">☀️ 乐观主义者</span>
+    </div>
+
+    <!-- 社交 / 联系方式 -->
+    <h2 class="section-title" id="contact">找到我</h2>
+    <div class="card-grid">
+      <a class="card" href="https://github.com/3278155436" target="_blank" rel="noopener">
+        <span class="card-icon">💻</span>
+        <h3>GitHub</h3>
+        <p>我的代码与开源项目</p>
+      </a>
+      <a class="card" href="mailto:example@example.com">
+        <span class="card-icon">📮</span>
+        <h3>邮箱</h3>
+        <p>写信给我，看到必回</p>
+      </a>
+      <a class="card" href="about.html">
+        <span class="card-icon">💬</span>
+        <h3>微信公众号</h3>
+        <p>搜索公众号名称关注我</p>
+      </a>
+      <a class="card" href="about.html">
+        <span class="card-icon">📺</span>
+        <h3>B 站</h3>
+        <p>我的视频空间</p>
+      </a>
+    </div>
+
+    <!-- 项目 / 作品展示 -->
+    <h2 class="section-title" id="projects">项目与作品</h2>
+    <div class="card-grid">
+      <a class="card" href="https://3278155436.github.io/">
+        <span class="card-icon">🌐</span>
+        <h3>个人主页</h3>
+        <p>你现在看到的小站，纯 HTML/CSS 手写</p>
+      </a>
+      <a class="card" href="about.html">
+        <span class="card-icon">🎨</span>
+        <h3>作品待补充</h3>
+        <p>放你的项目、设计、摄影集……</p>
+      </a>
+      <a class="card" href="about.html">
+        <span class="card-icon">🧩</span>
+        <h3>小工具</h3>
+        <p>做过的实用小玩意儿</p>
+      </a>
+    </div>
+
+    <!-- 随笔 / 文章 -->
+    <h2 class="section-title" id="posts">随笔与记录</h2>
+    <ul class="post-list">
+      <li class="post-item">
+        <div class="post-meta">
+          <span class="tag">教程</span>2026-10-24 · 约 5 分钟
+        </div>
+        <h2><a href="posts/github-pages-guide.html">GitHub Pages 部署完全指南</a></h2>
+        <p class="post-excerpt">从创建仓库到网站上线，手把手带你把静态网站部署到 GitHub Pages，全过程不超过 10 分钟，完全免费。</p>
+      </li>
+      <li class="post-item">
+        <div class="post-meta">
+          <span class="tag">写作</span>2026-10-20 · 约 3 分钟
+        </div>
+        <h2><a href="posts/how-to-write.html">如何给这个博客添加新文章</a></h2>
+        <p class="post-excerpt">不需要数据库，不需要后端：复制一个模板文件、写好内容、提交推送，三步完成发布。</p>
+      </li>
+      <li class="post-item">
+        <div class="post-meta">
+          <span class="tag">随笔</span>2026-10-15 · 约 2 分钟
+        </div>
+        <h2><a href="posts/hello-world.html">你好，世界：为什么我要写博客</a></h2>
+        <p class="post-excerpt">写作是最好的思考方式。这是本博客的第一篇文章，聊聊我开启这段旅程的原因。</p>
+      </li>
+    </ul>
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 我的博客 · 由 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 免费托管</p>
+    <p>© 2026 我的小站 · 由 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> 免费托管</p>
   </footer>
 </body>
 </html>
